@@ -1,6 +1,5 @@
 package com.aspira.ParserForAspira.entity.report;
 
-import com.aspira.ParserForAspira.entity.parse.leonbets.EventFullInfo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,5 +11,5 @@ import java.util.List;
 @NoArgsConstructor
 public class ReportLeague {
     private String name;
-    private List<EventFullInfo> matches;
+    private List<? extends Match> matches;
 }

@@ -1,10 +1,6 @@
-package com.aspira.ParserForAspira.service;
+package com.aspira.ParserForAspira.service.write;
 
-import com.aspira.ParserForAspira.entity.parse.leonbets.EventFullInfo;
-import com.aspira.ParserForAspira.entity.parse.leonbets.Market;
-import com.aspira.ParserForAspira.entity.parse.leonbets.Outcome;
-import com.aspira.ParserForAspira.entity.report.Report;
-import com.aspira.ParserForAspira.entity.report.ReportLeague;
+import com.aspira.ParserForAspira.entity.report.*;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -22,7 +18,7 @@ public class ConsoleWriter implements ReportWriter {
                 .append(report.getSportName())
                 .append(", ").append(league.getName())
                 .append('\n');
-            for (EventFullInfo match : league.getMatches()) {
+            for (Match match : league.getMatches()) {
                 builder
                     .append("\t").append(match.getName())
                     .append(", ").append(dateFormat.format(match.getKickoff()))
@@ -42,7 +38,6 @@ public class ConsoleWriter implements ReportWriter {
                     }
                 }
             }
-
         }
         System.out.println(builder);
     }

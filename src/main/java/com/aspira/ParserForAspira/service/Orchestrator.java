@@ -1,6 +1,9 @@
 package com.aspira.ParserForAspira.service;
 
 import com.aspira.ParserForAspira.entity.report.Report;
+import com.aspira.ParserForAspira.service.parse.Parser;
+import com.aspira.ParserForAspira.service.parse.ParserSupplier;
+import com.aspira.ParserForAspira.service.write.ReportWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.BeanDefinition;

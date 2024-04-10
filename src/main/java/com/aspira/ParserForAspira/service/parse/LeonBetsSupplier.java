@@ -1,4 +1,4 @@
-package com.aspira.ParserForAspira.service;
+package com.aspira.ParserForAspira.service.parse;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;

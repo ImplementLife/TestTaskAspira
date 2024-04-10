@@ -1,4 +1,4 @@
-package com.aspira.ParserForAspira.service;
+package com.aspira.ParserForAspira.service.write;
 
 import com.aspira.ParserForAspira.entity.report.Report;
 import org.springframework.stereotype.Service;

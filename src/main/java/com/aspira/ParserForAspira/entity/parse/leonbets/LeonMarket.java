@@ -1,5 +1,6 @@
 package com.aspira.ParserForAspira.entity.parse.leonbets;
 
+import com.aspira.ParserForAspira.entity.report.Market;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Market {
+public class LeonMarket implements Market {
     private String name;
-    private List<Outcome> runners;
+    private List<LeonOutcome> runners;
 }

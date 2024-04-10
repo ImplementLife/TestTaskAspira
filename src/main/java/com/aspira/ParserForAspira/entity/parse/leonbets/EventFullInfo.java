@@ -1,5 +1,6 @@
 package com.aspira.ParserForAspira.entity.parse.leonbets;
 
+import com.aspira.ParserForAspira.entity.report.Match;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
@@ -13,10 +14,10 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class EventFullInfo {
+public class EventFullInfo implements Match {
     private String id;
     private String name;
     @JsonFormat(shape = JsonFormat.Shape.NUMBER)
     private Date kickoff;
-    private List<Market> markets;
+    private List<LeonMarket> markets;
 }

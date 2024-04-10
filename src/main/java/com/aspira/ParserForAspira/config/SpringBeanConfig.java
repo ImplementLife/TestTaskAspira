@@ -1,7 +1,7 @@
 package com.aspira.ParserForAspira.config;
 
-import com.aspira.ParserForAspira.service.ConsoleWriter;
-import com.aspira.ParserForAspira.service.ReportWriter;
+import com.aspira.ParserForAspira.service.write.ConsoleWriter;
+import com.aspira.ParserForAspira.service.write.ReportWriter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.boot.web.client.RestTemplateBuilder;
