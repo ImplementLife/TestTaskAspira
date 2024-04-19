@@ -6,6 +6,6 @@ import org.springframework.stereotype.Component;
 public class AnotherBetsSupplier extends ParserSupplier {
     @Override
     public Parser get() {
-        return new AnotherBetsParser();
+        return context.getBean(AnotherBetsParser.class);
     }
 }

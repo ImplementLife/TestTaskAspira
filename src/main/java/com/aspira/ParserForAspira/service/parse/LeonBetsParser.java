@@ -5,6 +5,9 @@ import com.aspira.ParserForAspira.entity.report.Report;
 import com.aspira.ParserForAspira.entity.report.ReportLeague;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -13,20 +16,16 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
+@Scope(BeanDefinition.SCOPE_PROTOTYPE)
 public class LeonBetsParser implements Parser {
     private final String BASE_URL = "https://leonbets.com/";
     private final String ALL_LEAGUES_URL = "api-2/betline/sports";
     private final String LEAGUE_EVENTS_URL = "api-2/betline/events/all";
     private final String EVENT_URL = "api-2/betline/event/all";
 
-
+    @Autowired
     private RestTemplate restTemplate;
     private final ObjectMapper objectMapper = new ObjectMapper();
-
-
-    public void setRestTemplate(RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
-    }
 
     @Override
     public List<Report> fetchAndGenerateReports(String sportName) {

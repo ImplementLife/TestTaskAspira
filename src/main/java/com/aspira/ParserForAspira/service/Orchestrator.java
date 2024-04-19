@@ -34,7 +34,7 @@ public class Orchestrator {
     private ScheduledExecutorService executor;
 
     @PostConstruct
-    void postConstruct() {
+    private void postConstruct() {
         executor = Executors.newScheduledThreadPool(threadsCount);
     }
 
@@ -42,13 +42,17 @@ public class Orchestrator {
         for (String sportName : sportsFilter) {
             for (ParserSupplier parserSupplier : parserSuppliers) {
                 executor.scheduleAtFixedRate(() -> {
-                    Parser parser = parserSupplier.get();
-                    String parserName = parser.getClass().getSimpleName();
-                    String threadName = Thread.currentThread().getName();
-                    System.out.println("Thread " + threadName + ": start " + parserName);
-                    List<Report> parseReports = parser.fetchAndGenerateReports(sportName);
-                    System.out.println("Thread " + threadName + ": " + parserName + " reporting:");
-                    reportWriter.write(parseReports);
+                    try {
+                        Parser parser = parserSupplier.get();
+                        String parserName = parser.getClass().getSimpleName();
+                        String threadName = Thread.currentThread().getName();
+                        System.out.println("Thread " + threadName + ": start " + parserName);
+                        List<Report> parseReports = parser.fetchAndGenerateReports(sportName);
+                        System.out.println("Thread " + threadName + ": " + parserName + " reporting:");
+                        reportWriter.write(parseReports);
+                    } catch (Throwable e) {
+                        e.printStackTrace();
+                    }
                 }, 0, threadsPeriod, TimeUnit.SECONDS);
             }
         }
