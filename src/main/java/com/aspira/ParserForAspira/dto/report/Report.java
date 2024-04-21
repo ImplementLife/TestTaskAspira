@@ -1,4 +1,4 @@
-package com.aspira.ParserForAspira.entity.report;
+package com.aspira.ParserForAspira.dto.report;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,7 +9,8 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ReportLeague {
-    private String name;
+public class Report {
+    private String sportName;
+    private String leagueName;
     private List<? extends Match> matches;
 }

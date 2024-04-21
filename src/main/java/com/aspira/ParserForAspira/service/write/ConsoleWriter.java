@@ -1,6 +1,9 @@
 package com.aspira.ParserForAspira.service.write;
 
-import com.aspira.ParserForAspira.entity.report.*;
+import com.aspira.ParserForAspira.dto.report.Market;
+import com.aspira.ParserForAspira.dto.report.Match;
+import com.aspira.ParserForAspira.dto.report.Outcome;
+import com.aspira.ParserForAspira.dto.report.Report;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -12,13 +15,11 @@ public class ConsoleWriter implements ReportWriter {
     public void write(List<Report> reports) {
         StringBuilder builder = new StringBuilder();
         for (Report report : reports) {
-            ReportLeague league = report.getReportLeague();
-
             builder
                 .append(report.getSportName())
-                .append(", ").append(league.getName())
+                .append(", ").append(report.getLeagueName())
                 .append('\n');
-            for (Match match : league.getMatches()) {
+            for (Match match : report.getMatches()) {
                 builder
                     .append("\t").append(match.getName())
                     .append(", ").append(dateFormat.format(match.getKickoff()))

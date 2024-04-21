@@ -1,6 +1,6 @@
 package com.aspira.ParserForAspira.service;
 
-import com.aspira.ParserForAspira.entity.report.Report;
+import com.aspira.ParserForAspira.dto.report.Report;
 import com.aspira.ParserForAspira.service.parse.Parser;
 import com.aspira.ParserForAspira.service.parse.ParserSupplier;
 import com.aspira.ParserForAspira.service.write.ReportWriter;

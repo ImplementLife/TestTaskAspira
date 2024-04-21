@@ -1,6 +1,6 @@
 package com.aspira.ParserForAspira.service.write;
 
-import com.aspira.ParserForAspira.entity.report.Report;
+import com.aspira.ParserForAspira.dto.report.Report;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -1,6 +1,6 @@
-package com.aspira.ParserForAspira.entity.parse.leonbets;
+package com.aspira.ParserForAspira.dto.parse.leonbets;
 
-import com.aspira.ParserForAspira.entity.report.Market;
+import com.aspira.ParserForAspira.dto.report.Market;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;

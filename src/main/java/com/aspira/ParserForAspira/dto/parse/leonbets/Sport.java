@@ -1,4 +1,4 @@
-package com.aspira.ParserForAspira.entity.parse.leonbets;
+package com.aspira.ParserForAspira.dto.parse.leonbets;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
@@ -11,6 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class LeagueEvents {
-    private List<EventListInfo> events;
+public class Sport {
+    private String name;
+    private List<Region> regions;
 }

@@ -1,6 +1,6 @@
-package com.aspira.ParserForAspira.entity.parse.leonbets;
+package com.aspira.ParserForAspira.dto.parse.leonbets;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.aspira.ParserForAspira.dto.report.Outcome;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,11 +10,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class League {
-    private String id;
+public class LeonOutcome implements Outcome {
+    private long id;
     private String name;
-    @JsonIgnore
-    private String regionName;
-    private boolean top;
-    private int topOrder;
+    private double price;
 }

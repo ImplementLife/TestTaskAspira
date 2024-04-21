@@ -1,4 +1,4 @@
-package com.aspira.ParserForAspira.entity.report;
+package com.aspira.ParserForAspira.dto.report;
 
 public interface Outcome {
     long getId();

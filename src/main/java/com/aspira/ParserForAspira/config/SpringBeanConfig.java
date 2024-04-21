@@ -1,6 +1,6 @@
 package com.aspira.ParserForAspira.config;
 
-import com.aspira.ParserForAspira.service.write.ConsoleWriter;
+import com.aspira.ParserForAspira.service.write.JsonConsoleWriter;
 import com.aspira.ParserForAspira.service.write.ReportWriter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.BeanDefinition;
@@ -31,6 +31,6 @@ public class SpringBeanConfig {
 
     @Bean
     public ReportWriter getOut() {
-        return new ConsoleWriter();
+        return new JsonConsoleWriter();
     }
 }

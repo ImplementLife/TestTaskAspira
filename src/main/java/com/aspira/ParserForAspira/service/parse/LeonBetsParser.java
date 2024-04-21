@@ -1,8 +1,7 @@
 package com.aspira.ParserForAspira.service.parse;
 
-import com.aspira.ParserForAspira.entity.parse.leonbets.*;
-import com.aspira.ParserForAspira.entity.report.Report;
-import com.aspira.ParserForAspira.entity.report.ReportLeague;
+import com.aspira.ParserForAspira.dto.parse.leonbets.*;
+import com.aspira.ParserForAspira.dto.report.Report;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,16 +34,13 @@ public class LeonBetsParser implements Parser {
             .map(league -> {
                 Report report = new Report();
                 report.setSportName(sportName);
-                ReportLeague reportLeague = new ReportLeague();
-                reportLeague.setName(league.getName());
+                report.setLeagueName(league.getName());
 
                 List<EventListInfo> eventsListInfo = parseMatchesInLeagueInfo(fetchMatchesInLeagueInfo(league.getId()));
                 List<EventFullInfo> matches = eventsListInfo.stream()
                     .map(eventListInfo -> parseMatchInfo(fetchMatchInfo(eventListInfo.getId())))
                     .toList();
-                reportLeague.setMatches(matches);
-
-                report.setReportLeague(reportLeague);
+                report.setMatches(matches);
                 return report;
             })
             .collect(Collectors.toList());

@@ -1,6 +1,6 @@
 package com.aspira.ParserForAspira.service.parse;
 
-import com.aspira.ParserForAspira.entity.report.Report;
+import com.aspira.ParserForAspira.dto.report.Report;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
